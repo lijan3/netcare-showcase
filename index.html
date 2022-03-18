@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/windows.css">
+  </head>
+  <body onload="currentTime()">
+    <div id="startup" onclick="boot()">
+      <div>
+        <h1 class="white">Netcare</h1>
+        <h2 class="black">Project Showcase<span class="white">95</span></h2>
+      </div>
+    </div>
+    <div id="desktop">
+      <div>
+        <div id="screen">
+          <div class="icon-container">
+            <button id="my-computer" class="desktop-icon">
+              <img src="icons/computer_explorer_cool-0.png"/>
+              <span>My Computer</span>
+            </button>
+            <button id="the-internet" class="desktop-icon">
+              <img src="icons/search_web-0.png"/>
+              <span>The Internet</span>
+            </button>
+          </div>
+        </div>
+        <div class="taskbar">
+          <button class="start-button"><img src="img/start-button.png"/></button>
+          <div id="time"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="index.js"></script>
+</html>

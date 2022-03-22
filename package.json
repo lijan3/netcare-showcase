@@ -8,9 +8,9 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
-    "@themesberg/windows-95-ui-kit": "^1.2.0",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "@themesberg/windows-95-ui-kit": "^1.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.2",

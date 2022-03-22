@@ -1,41 +1,25 @@
 {
-  "name": "@themesberg/windows-95-ui-kit",
-  "version": "1.2.0",
-  "description": "Retro Windows 95 UI Kit in Bootstrap 4 created by Themesberg.com",
-  "keywords": [
-    "windows 95",
-    "ui kit",
-    "retro ui kit",
-    "bootstrap",
-    "retro bootstrap",
-    "themesberg",
-    "Windows 95 Buttons",
-    "Windows 95 Cards",
-    "Windows 95 Forms",
-    "Windows 95 Font",
-    "Windows 95 Tooltips",
-    "w95"
-  ],
-  "homepage": "https://themesberg.com/product/ui-kit/windows-95-ui-kit",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/themesberg/windows-95-ui-kit"
-  },
-  "bugs": {
-    "email": "support@themesberg.com"
-  },
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "name": "netcare-showcase",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build",
+    "lint": "vue-cli-service lint",
+    "dev": "vite",
+    "preview": "vite preview --port 5050"
   },
-  "author": "Themesberg",
-  "license": "MIT",
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.0.1"
+    "@themesberg/windows-95-ui-kit": "^1.2.0",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.2",
+    "@vue/cli-plugin-eslint": "~4.5.14",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.0.0",
+    "prettier": "^2.2.1",
+    "vite": "^2.8.4"
   }
 }

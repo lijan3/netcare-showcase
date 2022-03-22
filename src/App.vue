@@ -1,0 +1,38 @@
+<template>
+  <RouterView v-slot="{ Component, route }">
+    <transition :name="route.meta.transition" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </RouterView>
+</template>
+
+<style>
+@font-face {
+  font-family: "FranklinGothic";
+  src: url("src/assets/fonts/FranklinGothicRegular.ttf");
+}
+
+html,
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: black;
+}
+
+div#app {
+  display: flex;
+  flex-grow: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

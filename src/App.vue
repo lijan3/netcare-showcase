@@ -26,6 +26,16 @@ div#app {
   flex-grow: 1;
 }
 
+p,
+ol li,
+ul li {
+  font-size: 11px;
+}
+
+.btn {
+  font-family: "Windows 95";
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 3s ease;

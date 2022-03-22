@@ -22,6 +22,7 @@ export default {
   },
   methods: {
     boot: function () {
+      document.body.style.cursor = "progress";
       const audio = new Audio("src/assets/sound/startup.wav");
       audio.play();
       this.$router.push({ name: "desktop" });

@@ -1,5 +1,5 @@
 <template>
-  <button class="desktop-icon">
+  <button @dblclick="onclick" class="desktop-icon">
     <img :src="`src/assets/icons/${icon}`" />
     <span>{{ label }}</span>
   </button>

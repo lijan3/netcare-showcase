@@ -10,6 +10,9 @@
           :onclick="icon.onclick"
         />
       </div>
+      <div class="dialogs">
+        <Wizard v-if="show" title="Care4You Setup" />
+      </div>
     </div>
     <task-bar></task-bar>
   </div>
@@ -18,11 +21,14 @@
 <script>
 import DesktopIcon from "../components/DesktopIcon.vue";
 import TaskBar from "../components/TaskBar.vue";
+import Wizard from "../components/Wizard.vue";
 
 export default {
   name: "DesktopView",
   data: function () {
+    const vm = this;
     return {
+      show: false,
       icons: [
         {
           key: "MyComputer",
@@ -40,7 +46,7 @@ export default {
           key: "Care4You",
           img: "executable-0.png",
           label: "Care4You.exe",
-          onclick: () => {},
+          onclick: () => (vm.show = true),
         },
         {
           key: "EDR",
@@ -51,9 +57,15 @@ export default {
       ],
     };
   },
+  mounted: function () {
+    setTimeout(() => {
+      document.body.style.cursor = "default";
+    }, 3000);
+  },
   components: {
     DesktopIcon,
     TaskBar,
+    Wizard,
   },
 };
 </script>
@@ -72,26 +84,18 @@ export default {
 }
 
 .desktop-icons {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 10;
 }
 
-/* .desktop-icon { 
-  background: none;
-  border: none;
-  padding: 0;
+.dialogs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "MSSansSerif";
-  font-size: 9px;
-  color: white;
-  margin-bottom: 18px;
-} */
-
-/* .desktop-icon > img {
-  width: 40px;
-  margin-bottom: 4px;
-} */
+  justify-content: center;
+  width: 100%;
+}
 </style>

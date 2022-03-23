@@ -3,41 +3,62 @@
     <div class="card-header text-center">
       <span>{{ title }}</span>
     </div>
-    <div class="card-body">
+    <div
+      v-for="(step, index) in steps"
+      :key="index"
+      v-show="currentStep === index"
+      class="card-body"
+    >
       <div
         class="card-image"
         :style="{
-          backgroundImage:
-            'url(\'src/assets/img/care4you/kenan-ambulance.jpg\')',
+          backgroundImage: `url('src/assets/img/${step.image}')`,
         }"
       ></div>
       <div class="card-content">
-        <h1 class="card-heading">Care4You Setup Wizard</h1>
-        <p class="card-text">
-          Welcome to the Care4You Setup Wizard, which will guide you through the
-          rest of the Setup. To begin, click Next.
-        </p>
-        <p class="card-text">The next four parts of Setup are:</p>
-        <ol>
-          <li>Problem</li>
-          <li>Outcomes</li>
-          <li>Stack</li>
-          <li>Processes</li>
-        </ol>
+        <h1 class="card-heading">{{ step.heading }}</h1>
+        <h2 v-if="step.subheading" class="card-subheading">
+          {{ step.subheading }}
+        </h2>
+        <component :is="step.content"></component>
       </div>
     </div>
     <div class="divider"></div>
-    <div class="card-actions">
-      <div>
-        <button disabled class="btn btn-primary border-dark-lg" type="button">
-          <span class="btn-text">Back</span>
+    <div v-if="currentStep < total - 1" class="card-actions">
+      <div class="d-flex">
+        <button
+          class="btn btn-primary border-dark"
+          type="button"
+          @click="back"
+          :disabled="currentStep == 0"
+        >
+          <span class="btn-text">&lt;&nbsp;Back</span>
         </button>
-        <button class="btn btn-primary border-dark-lg" type="button">
+        <button
+          class="btn btn-primary border-dark-lg"
+          type="button"
+          @click="next"
+        >
           <span class="btn-text">Next&nbsp;&gt;</span>
         </button>
       </div>
-      <button id="cancel" class="btn btn-primary border-dark-lg" type="button">
+      <button
+        id="cancel"
+        class="btn btn-primary border-dark"
+        type="button"
+        @click="cancel"
+      >
         <span class="btn-text">Cancel</span>
+      </button>
+    </div>
+    <div v-else class="card-actions">
+      <button
+        id="cancel"
+        class="btn btn-primary border-dark-lg"
+        type="button"
+        @click="complete"
+      >
+        <span class="btn-text">Finish</span>
       </button>
     </div>
   </div>
@@ -46,8 +67,36 @@
 <script>
 export default {
   name: "Wizard",
+  data: function () {
+    return {
+      currentStep: 0,
+      total: 0,
+    };
+  },
+  mounted: function () {
+    this.total = this.steps?.length;
+  },
+  methods: {
+    next: function () {
+      if (this.currentStep + 1 < this.total) {
+        this.currentStep++;
+      }
+    },
+    back: function () {
+      if (this.currentStep - 1 >= 0) {
+        this.currentStep--;
+      }
+    },
+    cancel: function () {
+      this.$emit("cancel");
+    },
+    complete: function () {
+      this.$emit("complete");
+    },
+  },
   props: {
     title: String,
+    steps: Array,
   },
 };
 </script>
@@ -70,6 +119,21 @@ export default {
   flex-grow: 1 !important;
 }
 
+.card-image {
+  width: 250px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-color: gray;
+  background-size: cover;
+  background-position: center center;
+  border: 1px solid black;
+  margin-right: 40px;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
 ol {
   counter-reset: list;
 }
@@ -81,17 +145,18 @@ ol > li:before {
   counter-increment: list;
 }
 
-.card-image {
-  width: 50%;
-  background: gray;
-  border: 1px solid black;
-  margin-right: 40px;
+.card-heading,
+.card-subheading {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
 }
 
 .card-heading {
-  font-family: "Times New Roman", Times, serif;
   font-size: 40px;
-  margin-top: 0;
+}
+
+.card-subheading {
+  font-size: 30px;
 }
 
 .divider {

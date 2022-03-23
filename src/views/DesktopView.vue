@@ -11,7 +11,12 @@
         />
       </div>
       <div class="dialogs">
-        <Wizard v-if="show" title="Care4You Setup" />
+        <Care4YouWizard
+          v-if="Care4YouShow"
+          title="Care4You Setup"
+          @cancel="Care4YouShow = false"
+          @finish="Care4YouComplete"
+        />
       </div>
     </div>
     <task-bar></task-bar>
@@ -21,14 +26,14 @@
 <script>
 import DesktopIcon from "../components/DesktopIcon.vue";
 import TaskBar from "../components/TaskBar.vue";
-import Wizard from "../components/Wizard.vue";
+import Care4YouWizard from "../components/Care4You/Care4You.vue";
 
 export default {
   name: "DesktopView",
   data: function () {
     const vm = this;
     return {
-      show: false,
+      Care4YouShow: false,
       icons: [
         {
           key: "MyComputer",
@@ -38,20 +43,26 @@ export default {
         },
         {
           key: "InternetExplorer",
-          img: "msie2-5.png",
+          img: "msie1-2.png",
           label: "Internet Explorer",
           onclick: () => {},
         },
         {
-          key: "Care4You",
+          key: "RecycleBin",
+          img: "recycle_bin_empty_cool-0.png",
+          label: "Recycle Bin",
+          onclick: () => {},
+        },
+        {
+          key: "Care4YouInstall",
           img: "executable-0.png",
-          label: "Care4You.exe",
-          onclick: () => (vm.show = true),
+          label: "C4Y-setup.exe",
+          onclick: () => (vm.Care4YouShow = true),
         },
         {
           key: "EDR",
           img: "executable-0.png",
-          label: "EDR.exe",
+          label: "EDR-setup.exe",
           onclick: () => {},
         },
       ],
@@ -62,10 +73,22 @@ export default {
       document.body.style.cursor = "default";
     }, 3000);
   },
+  methods: {
+    Care4YouComplete: function () {
+      console.log("Care4YouComplete");
+      this.Care4YouShow = false;
+      this.icons.push({
+        key: "Care4You",
+        img: "wm_file-5.png",
+        label: "Care4You",
+        onclick: () => {},
+      });
+    },
+  },
   components: {
     DesktopIcon,
     TaskBar,
-    Wizard,
+    Care4YouWizard,
   },
 };
 </script>

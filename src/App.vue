@@ -26,6 +26,28 @@ div#app {
   flex-grow: 1;
 }
 
+.d-flex {
+  display: flex;
+}
+
+p,
+ol li,
+ul li {
+  font-size: 11px;
+}
+
+ul {
+  margin-bottom: 12px;
+}
+
+.btn {
+  font-family: "Windows 95";
+}
+
+.btn-primary:disabled {
+  color: grey;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 3s ease;

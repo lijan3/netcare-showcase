@@ -18,10 +18,12 @@ export default {
   box-shadow: 1px 1px #000;
   background-color: #c0c0c0;
   padding: 4px;
+  margin-right: 3px;
+  height: 100%;
 }
 
 .start-button > img {
   display: block;
-  height: 100%;
+  height: 80%;
 }
 </style>

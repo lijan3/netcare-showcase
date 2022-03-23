@@ -13,6 +13,7 @@ import Wizard from "../Wizard.vue";
 import Care4YouSetup from "./Care4YouSetup.vue";
 import Care4YouProblem from "./Care4YouProblem.vue";
 import Care4YouStack from "./Care4YouStack.vue";
+import Care4YouConstraints from "./Care4YouConstraints.vue";
 import Care4YouDeployment from "./Care4YouDeployment.vue";
 import Care4YouFinish from "./Care4YouFinish.vue";
 
@@ -20,6 +21,7 @@ import { shallowRef } from "vue";
 const Setup = shallowRef(Care4YouSetup);
 const Problem = shallowRef(Care4YouProblem);
 const Stack = shallowRef(Care4YouStack);
+const Constraints = shallowRef(Care4YouConstraints);
 const Deployment = shallowRef(Care4YouDeployment);
 const Finish = shallowRef(Care4YouFinish);
 
@@ -64,7 +66,12 @@ export default {
         {
           image: "care4you/care4you.jpg",
           heading: "Constraints",
-          subheading: "Technology Stack",
+          content: Constraints,
+        },
+        {
+          image: "care4you/care4you.jpg",
+          heading: "Constraints",
+          subheading: "Stack",
           content: Stack,
         },
         {

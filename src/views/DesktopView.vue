@@ -11,10 +11,11 @@
         />
       </div>
       <div class="dialogs">
+        <WelcomeDialog v-if="showWelcome" @close="showWelcome = false" />
         <Care4YouWizard
           v-if="Care4YouShow"
           title="Care4You Setup"
-          @cancel="Care4YouShow = false"
+          @cancel="Care4YouCancel"
           @finish="Care4YouComplete"
         />
         <EDRWizard
@@ -25,13 +26,14 @@
         />
       </div>
     </div>
-    <task-bar></task-bar>
+    <task-bar :windows="windows"></task-bar>
   </div>
 </template>
 
 <script>
 import DesktopIcon from "../components/DesktopIcon.vue";
 import TaskBar from "../components/TaskBar.vue";
+import WelcomeDialog from "../components/WelcomeDialog.vue";
 import Care4YouWizard from "../components/Care4You/Care4You.vue";
 import EDRWizard from "../components/EDR/EDR.vue";
 
@@ -40,8 +42,11 @@ export default {
   data: function () {
     const vm = this;
     return {
+      showWelcome: false,
+      showKnowledgeShare: false,
       Care4YouShow: false,
       EDRShow: false,
+      windows: [],
       icons: [
         {
           key: "MyComputer",
@@ -65,7 +70,14 @@ export default {
           key: "Care4YouInstall",
           img: "executable-0.png",
           label: "C4Y-setup.exe",
-          onclick: () => (vm.Care4YouShow = true),
+          onclick: () => {
+            vm.Care4YouShow = true;
+            vm.windows.push({
+              key: "Care4You-setup",
+              icon: "executable-0.png",
+              label: "C4Y-setup",
+            });
+          },
         },
         {
           key: "EDRInstall",
@@ -77,17 +89,32 @@ export default {
     };
   },
   mounted: function () {
+    const vm = this;
     setTimeout(() => {
       document.body.style.cursor = "default";
+      vm.showWelcome = true;
     }, 3000);
   },
   methods: {
-    Care4YouComplete: function () {
-      console.log("Care4YouComplete");
+    closeWindow: function (key) {
+      const index = this.windows.findIndex((w) => w.key === key);
+      this.windows = [
+        ...this.windows.slice(0, index),
+        ...this.windows.slice(index + 1),
+      ];
+    },
+    // Care4You
+    Care4YouCancel: function () {
       this.Care4YouShow = false;
-      this.icons.push({
+      this.closeWindow("Care4You-setup");
+    },
+    Care4YouComplete: function () {
+      const vm = this;
+      vm.Care4YouShow = false;
+      vm.closeWindow("Care4You-setup");
+      vm.icons.push({
         key: "Care4You",
-        img: "wm_file-5.png",
+        img: "directory_closed-4.png",
         label: "Care4You",
         onclick: () => {},
       });
@@ -105,6 +132,7 @@ export default {
   components: {
     DesktopIcon,
     TaskBar,
+    WelcomeDialog,
     Care4YouWizard,
     EDRWizard,
   },
@@ -140,4 +168,13 @@ export default {
   width: 100%;
 }
 
+.dialogs > .card {
+  z-index: 1;
+}
+
+.dialogs > .card.secondary-dialog {
+  position: absolute;
+  z-index: 2;
+  margin-left: 100px;
+}
 </style>

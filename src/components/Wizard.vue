@@ -103,74 +103,7 @@ export default {
 
 <style scoped>
 .card {
-  display: flex;
-  flex-direction: column;
-  width: 800px;
-  height: 600px;
-}
-
-.card > div {
-  flex-grow: 0;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1 !important;
-}
-
-.card-image {
-  width: 250px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  background-color: gray;
-  background-size: cover;
-  background-position: center center;
-  border: 1px solid black;
-  margin-right: 40px;
-}
-
-.card-content {
-  flex-grow: 1;
-}
-
-ol {
-  counter-reset: list;
-}
-ol > li {
-  list-style: none;
-}
-ol > li:before {
-  content: counter(list, decimal) ") ";
-  counter-increment: list;
-}
-
-.card-heading,
-.card-subheading {
-  font-family: "Times New Roman", Times, serif;
-  margin: 0;
-}
-
-.card-heading {
-  font-size: 40px;
-}
-
-.card-subheading {
-  font-size: 30px;
-}
-
-.divider {
-  height: 1px;
-  border-bottom: 1px solid white;
-  box-shadow: inset 0 -1px 0 0 gray;
-  margin: 0 10px;
-}
-
-.card-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin: 10px;
+  height: 768px;
 }
 
 button#cancel {

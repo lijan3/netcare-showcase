@@ -18,6 +18,12 @@
           @cancel="Care4YouCancel"
           @finish="Care4YouComplete"
         />
+        <EDRWizard
+          v-if="EDRShow"
+          title="EDR Setup"
+          @cancel="EDRShow = false"
+          @finish="EDRComplete"
+        />
       </div>
     </div>
     <task-bar :windows="windows"></task-bar>
@@ -29,6 +35,7 @@ import DesktopIcon from "../components/DesktopIcon.vue";
 import TaskBar from "../components/TaskBar.vue";
 import WelcomeDialog from "../components/WelcomeDialog.vue";
 import Care4YouWizard from "../components/Care4You/Care4You.vue";
+import EDRWizard from "../components/EDR/EDR.vue";
 
 export default {
   name: "DesktopView",
@@ -38,6 +45,7 @@ export default {
       showWelcome: false,
       showKnowledgeShare: false,
       Care4YouShow: false,
+      EDRShow: false,
       windows: [],
       icons: [
         {
@@ -72,10 +80,10 @@ export default {
           },
         },
         {
-          key: "EDR",
+          key: "EDRInstall",
           img: "executable-0.png",
           label: "EDR-setup.exe",
-          onclick: () => {},
+          onclick: () => (vm.EDRShow = true),
         },
       ],
     };
@@ -111,13 +119,22 @@ export default {
         onclick: () => {},
       });
     },
-    // EDR
+    EDRComplete: function () {
+      this.EDRShow = false;
+      this.icons.push({
+        key: "EDR",
+        img: "wm_file-5.png",
+        label: "EDRShow",
+        onclick: () => {},
+      });
+    },
   },
   components: {
     DesktopIcon,
     TaskBar,
     WelcomeDialog,
     Care4YouWizard,
+    EDRWizard,
   },
 };
 </script>

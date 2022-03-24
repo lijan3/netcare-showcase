@@ -64,7 +64,7 @@ export default {
       this.caption = "TODO";
     },
     showClient: function () {
-      this.image = "";
+      this.image = "src/assets/img/netcare.jpg";
       this.caption =
         "TODO: Netcare, basic intro into the work we’re involved in with them. Their systems, etc.";
     },

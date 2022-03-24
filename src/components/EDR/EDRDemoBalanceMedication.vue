@@ -1,6 +1,10 @@
 <template>
   <div>
-    <img src="../../assets/img/edr/Balance medication.gif" width="490" height="400">
+    <img
+      src="../../assets/img/edr/Balance medication.gif"
+      width="490"
+      height="400"
+    />
   </div>
 </template>
 

@@ -1,7 +1,8 @@
 <template>
   <div>
     <p class="card-text">
-      Tech stack constraints were relatively restrictive but we were able to integrate modern tech.
+      Tech stack constraints were relatively restrictive but we were able to
+      integrate modern tech.
     </p>
     <ol>
       <li>
@@ -11,15 +12,11 @@
           <li>ReactJS was the choice of SPA</li>
         </ul>
       </li>
-      <li>
-        React Hooks (front-end)
-      </li>
+      <li>React Hooks (front-end)</li>
       <li>
         DotNetNuke WebAPI
         <ul>
-          <li>
-            DNN extension used to implement API endpoints
-          </li>
+          <li>DNN extension used to implement API endpoints</li>
         </ul>
       </li>
       <li>MS SQL Server</li>

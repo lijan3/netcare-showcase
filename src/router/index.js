@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import BootView from "../views/BootView.vue"
-import DesktopView from "../views/DesktopView.vue"
+import BootView from "../views/BootView.vue";
+import DesktopView from "../views/DesktopView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,16 +10,16 @@ const router = createRouter({
       name: "boot",
       component: BootView,
       meta: {
-        transitionOut: 'fade'
-      }
+        transitionOut: "fade",
+      },
     },
     {
       path: "/desktop",
       name: "desktop",
       component: DesktopView,
       meta: {
-        transition: 'fade'
-      }
+        transition: "fade",
+      },
     },
   ],
 });

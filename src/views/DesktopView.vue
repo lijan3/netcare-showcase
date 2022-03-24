@@ -11,7 +11,7 @@
         />
       </div>
       <div class="dialogs">
-        <WelcomeDialog v-if="showWelcome" @close="showWelcome = false" />
+        <WelcomeDialog v-if="showWelcome" @close="closeWelcomeDialog" />
         <Care4YouWizard
           v-if="Care4YouShow"
           title="Care4You Setup"
@@ -26,7 +26,7 @@
         />
       </div>
     </div>
-    <task-bar :windows="windows"></task-bar>
+    <task-bar :windows="windows" @showWelcome="showWelcomeDialog"></task-bar>
   </div>
 </template>
 
@@ -92,7 +92,7 @@ export default {
     const vm = this;
     setTimeout(() => {
       document.body.style.cursor = "default";
-      vm.showWelcome = true;
+      vm.showWelcomeDialog();
     }, 3000);
   },
   methods: {
@@ -102,6 +102,17 @@ export default {
         ...this.windows.slice(0, index),
         ...this.windows.slice(index + 1),
       ];
+    },
+    showWelcomeDialog: function () {
+      this.showWelcome = true;
+      this.windows.push({
+        key: "Welcome",
+        label: "Welcome",
+      });
+    },
+    closeWelcomeDialog: function () {
+      this.showWelcome = false;
+      this.closeWindow("Welcome");
     },
     // Care4You
     Care4YouCancel: function () {

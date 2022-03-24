@@ -18,48 +18,10 @@
       <button
         class="btn btn-primary border-dark"
         type="button"
-        @click="step = 1"
+        @click="step++"
+        :disabled="step >= steps.length - 1"
       >
-        <span class="btn-text">
-          <span class="underline">P</span>aint Memes
-        </span>
-      </button>
-      <button
-        class="btn btn-primary border-dark"
-        type="button"
-        @click="step = 2"
-      >
-        <span class="btn-text"> <span class="underline">M</span>usic </span>
-      </button>
-      <button
-        class="btn btn-primary border-dark"
-        type="button"
-        @click="step = 3"
-      >
-        <span class="btn-text">
-          Personal <span class="underline">A</span>necdotes
-        </span>
-      </button>
-      <button
-        class="btn btn-primary border-dark"
-        type="button"
-        @click="step = 4"
-      >
-        <span class="btn-text"> <span class="underline">W</span>arcrimes </span>
-      </button>
-      <button
-        class="btn btn-primary border-dark"
-        type="button"
-        @click="step = 5"
-      >
-        <span class="btn-text"> <span class="underline">Q</span>uestions </span>
-      </button>
-      <button
-        class="btn btn-primary border-dark"
-        type="button"
-        @click="step = 6"
-      >
-        <span class="btn-text"> Purpose </span>
+        <span class="btn-text"> Next <span class="underline">T</span>ip </span>
       </button>
       <!-- CLose -->
       <div class="divider"></div>
@@ -97,7 +59,7 @@ export default {
         },
         {
           image: "rituals.jpg",
-          caption: "We share personal anecdotes",
+          caption: "We rely on each other for support",
         },
         {
           image: "robabank.jpg",
@@ -109,8 +71,11 @@ export default {
         },
         {
           image: "flames.jpg",
-          caption:
-            "We do this to build personal relationships, grow as a team and generate more memes",
+          caption: "This helps us build personal relationships",
+        },
+        {
+          image: "ikeworm.jpg",
+          caption: "This helps us grow as a team",
         },
       ],
     };

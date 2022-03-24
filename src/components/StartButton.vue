@@ -1,5 +1,5 @@
 <template>
-  <button class="start-button">
+  <button class="start-button" @click="$emit('showWelcome')">
     <img src="src/assets/img/start-button.png" />
   </button>
 </template>

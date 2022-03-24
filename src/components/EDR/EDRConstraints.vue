@@ -1,12 +1,8 @@
 <template>
   <div>
     <ol>
-      <li>
-        Data - SAP + SAP endpoints are the primary source of information
-      </li>
-      <li>
-        Stack - DNN is the the containing applications
-      </li>
+      <li>Data - SAP + SAP endpoints are the primary source of information</li>
+      <li>Stack - DNN is the the containing applications</li>
       <li>
         Deployment
         <ol>

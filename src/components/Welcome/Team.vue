@@ -2,8 +2,10 @@
   <div class="dialog">
     <div class="carousel">
       <img :src="image" />
-      <p class="card-text bold">{{ label }}</p>
-      <p class="card-text">{{ caption }}</p>
+      <div>
+        <p class="card-text bold">{{ label }}</p>
+        <p class="card-text">{{ caption }}</p>
+      </div>
     </div>
     <div class="content">
       <button

@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar">
     <div class="start">
-      <start-button />
+      <start-button @showWelcome="$emit('showWelcome')" />
       <div v-for="(window, i) in windows" :key="i" class="window">
-        <img :src="`src/assets/icons/${window.icon}`" />
+        <img v-if="window.icon" :src="`src/assets/icons/${window.icon}`" />
         <span class="btn-text">{{ window.label }}</span>
       </div>
     </div>

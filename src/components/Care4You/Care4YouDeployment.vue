@@ -1,26 +1,21 @@
 <template>
   <div>
-    <p class="card-text">TODO</p>
+    <p class="card-text">Workaround method of deployment due to strict tech stack constraints</p>
     <ol>
       <li>
-        Modules required manually uploading a zip file to a web frontend and
-        waiting 30+ minutes for the website to recompile
+        Modules
       </li>
       <li>
-        Deploying Windows services required RDP into different nodes and
-        manually copying files over
+        Windows Services
       </li>
       <li>
-        All Netcare developers use the same DEV and QA environments so had to
-        take turns deploying
+        All Netcare developers use the same DEV and QA environments
       </li>
       <li>
-        DNN is a highly coupled platform so mistakes from other teams could
-        break our modules
+        DNN is a highly coupled platform
       </li>
       <li>
-        Did not have system permissions to stop and start Windows services on
-        prod so always had to have another Netcare dev present
+        Did not have system permissions
       </li>
       <li>Could only deploy to prod after hours</li>
     </ol>

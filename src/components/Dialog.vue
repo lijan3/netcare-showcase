@@ -31,6 +31,7 @@ export default {
 <style scoped>
 .card {
   width: auto;
+  max-width: 85vw;
 }
 
 .card-header {
@@ -59,7 +60,7 @@ export default {
 
 .image {
   max-height: 85vh;
-  width: auto;
+  width: 100%;
   border: 2px inset;
 }
 

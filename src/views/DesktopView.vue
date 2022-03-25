@@ -43,6 +43,12 @@
           image="src/assets/img/care4you/ReceiverJourney.gif"
           @close="showReceiverJourney = false"
         />
+        <Dialog
+          v-if="showEDRDemo"
+          title="EDR Demo"
+          image="src/assets/img/edr/EDRDemo.gif"
+          @close="showEDRDemo = false"
+        />
       </div>
     </div>
     <task-bar :windows="windows" @showWelcome="showWelcomeDialog"></task-bar>
@@ -68,6 +74,7 @@ export default {
       showSenderJourney: false,
       showAdminJourney: false,
       showReceiverJourney: false,
+      showEDRDemo: false,
       EDRShow: false,
       windows: [],
       icons: [
@@ -172,12 +179,15 @@ export default {
       });
     },
     EDRComplete: function () {
-      this.EDRShow = false;
-      this.icons.push({
+      const vm = this;
+      vm.EDRShow = false;
+      vm.icons.push({
         key: "EDR",
         img: "wm_file-5.png",
-        label: "EDRShow",
-        onclick: () => {},
+        label: "EDR-Demo",
+        onclick: () => {
+          this.showEDRDemo = true;
+        },
       });
     },
   },

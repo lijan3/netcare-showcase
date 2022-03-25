@@ -2,13 +2,18 @@
   <div class="card card-tertiary card-dialog">
     <div class="card-header text-left">
       <span>{{ title }}</span>
+      <button
+        class="btn btn-sm btn-primary"
+        type="button"
+        @click="$emit('close')"
+      >
+        <span class="btn-text">
+          <img src="src/assets/icons/close.png" />
+        </span>
+      </button>
     </div>
     <div class="card-body">
-      <div class="card-content">
-        <div class="dialog">
-          <img :src="image" />
-        </div>
-      </div>
+      <img class="image" :src="image" />
     </div>
   </div>
 </template>
@@ -24,6 +29,16 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  width: auto;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .card-text {
   text-align: left;
   margin: 0;
@@ -32,22 +47,7 @@ export default {
 .dialog {
   display: flex;
   flex-grow: 1;
-}
-
-.carousel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 700px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  margin: 12px;
-}
-
-.carousel > img {
-  width: 100%;
-  border: 2px inset;
-  margin-bottom: 12px;
+  justify-content: center;
 }
 
 .content {
@@ -57,8 +57,15 @@ export default {
   margin: 4px 12px;
 }
 
+.image {
+  max-height: 85vh;
+  width: auto;
+  border: 2px inset;
+}
+
 .btn {
-  margin-top: 8px;
+  border: none;
+  padding: 4px;
 }
 
 .divider {

@@ -82,11 +82,6 @@ export default {
         },
         {
           image: "care4you/care4you.jpg",
-          heading: "Team Processes",
-          content: Problem,
-        },
-        {
-          image: "care4you/care4you.jpg",
           heading: "Finishing Setup",
           content: Finish,
         },

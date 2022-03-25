@@ -59,7 +59,7 @@ export default {
         },
         {
           image: "rituals.jpg",
-          caption: "We rely on each other for support",
+          caption: "We share our dreams and deepest desires",
         },
         {
           image: "robabank.jpg",

@@ -93,7 +93,7 @@ export default {
         },
         {
           key: "Memes",
-          image: "",
+          image: "memes.jpg",
           caption: "Most of our memes are made in MS Paint",
         },
         {

@@ -23,6 +23,15 @@
       <button
         class="btn btn-primary border-dark"
         type="button"
+        @click="showPowers"
+      >
+        <span class="btn-text">
+          <span class="underline">S</span>uperpowers
+        </span>
+      </button>
+      <button
+        class="btn btn-primary border-dark"
+        type="button"
         @click="showClient"
       >
         <span class="btn-text">
@@ -54,19 +63,23 @@ export default {
   name: "Welcome",
   data: function () {
     return {
-      image: "src/assets/img/culture/spicegirls.jpg",
-      caption: "TODO",
+      image: "src/assets/img/welcome.gif",
+      caption: "We spent way too much time on this",
     };
   },
   methods: {
     showWelcome: function () {
-      this.image = "src/assets/img/culture/spicegirls.jpg";
-      this.caption = "TODO";
+      this.image = "src/assets/img/welcome.gif";
+      this.caption = "We spent way too much time on this";
     },
     showClient: function () {
       this.image = "src/assets/img/netcare.jpg";
       this.caption =
-        "TODO: Netcare, basic intro into the work we’re involved in with them. Their systems, etc.";
+        "Netcare is the largest private healthcare provider in SA and the UK";
+    },
+    showPowers: function () {
+      this.image = "src/assets/img/bigdeal.jpg";
+      this.caption = "The Justice League has nothing on us";
     },
   },
 };

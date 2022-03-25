@@ -5,12 +5,11 @@
   </p>
   <p class="card-text">The next four parts of Setup are:</p>
   <ol>
+    <li>Overview</li>
     <li>Progression</li>
     <li>Problem</li>
     <li>Requirements</li>
-    <li>Stack</li>
     <li>Constraints</li>
-    <li>Process</li>
   </ol>
 </template>
 

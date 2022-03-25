@@ -11,21 +11,21 @@
 import Wizard from "../Wizard.vue";
 // Steps
 import EDRSetup from "./EDRSetup.vue";
+import EDROverview from "./EDROverview.vue";
 import EDRProblem from "./EDRProblem.vue";
-import EDRStack from "./EDRStack.vue";
 import EDRFinish from "./EDRFinish.vue";
+import EDRRequirements from "./EDRRequirements.vue";
 import EDRProgression from "./EDRProgression.vue";
 import EDRConstraints from "./EDRConstraints.vue";
-import EDRProcess from "./EDRProcess.vue";
 
 import { shallowRef } from "vue";
 const Setup = shallowRef(EDRSetup);
+const Overview = shallowRef(EDROverview);
 const Problem = shallowRef(EDRProblem);
-const Stack = shallowRef(EDRStack);
 const Progression = shallowRef(EDRProgression);
 const Constraints = shallowRef(EDRConstraints);
-const Process = shallowRef(EDRProcess);
 const Finish = shallowRef(EDRFinish);
+const Requirements = shallowRef(EDRRequirements);
 
 export default {
   name: "EDRWizard",
@@ -39,30 +39,33 @@ export default {
         },
         {
           image: "edr/edr.jpg",
-          heading: "Progression from Care4You",
+          heading: "EDR",
+          subheading: "Overview",
+          content: Overview,
+        },
+        {
+          image: "edr/edr.jpg",
+          heading: "Progression",
+          subheading: "Wins after Care4You",
           content: Progression,
         },
         {
           image: "edr/edr.jpg",
           heading: "Problem Statement",
+          subheading: "Primary goals of the project",
           content: Problem,
         },
         {
           image: "edr/edr.jpg",
-          heading: "Constraints",
-          subheading: "Technology Stack",
-          content: Stack,
+          heading: "Requirements",
+          subheading: "Tasks to fulfil goals",
+          content: Requirements,
         },
         {
           image: "edr/edr.jpg",
           heading: "Constraints",
           subheading: "Project Constraints",
           content: Constraints,
-        },
-        {
-          image: "edr/edr.jpg",
-          heading: "Team Processes",
-          content: Process,
         },
         {
           image: "edr/edr.jpg",

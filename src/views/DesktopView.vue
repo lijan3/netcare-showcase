@@ -239,6 +239,7 @@ export default {
     EDRComplete: function () {
       const vm = this;
       vm.EDRShow = false;
+      vm.closeWindow("EDR-setup");
       vm.icons.push({
         key: "EDR",
         img: "wm_file-5.png",

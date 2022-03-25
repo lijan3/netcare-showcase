@@ -40,19 +40,19 @@ export default {
           content: Setup,
         },
         {
-          image: "care4you/care4you.jpg",
+          image: "care4you/Sender.jpg",
           heading: "Project Outcomes",
           subheading: "Sender Journey",
           content: Sender,
         },
         {
-          image: "care4you/care4you.jpg",
+          image: "care4you/Admin2.jpg",
           heading: "Project Outcomes",
           subheading: "Admin Journey",
           content: Admin,
         },
         {
-          image: "care4you/care4you.jpg",
+          image: "care4you/Receiver.jpg",
           heading: "Project Outcomes",
           subheading: "Receiver Journey",
           content: Receiver,

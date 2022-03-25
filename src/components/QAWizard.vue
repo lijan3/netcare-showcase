@@ -14,7 +14,11 @@
         <h1 class="card-heading">QA Setup</h1>
         <p class="card-text">
           Welcome to the QA Setup Wizard. Click Finish to complete installing
-          the following Quality Assurance modules:
+          STLC.
+        </p>
+        <p class="card-text">
+          STLC is a testing process in which various activities are performed to
+          improve the quality of the product:
         </p>
         <ol>
           <li>Testing</li>

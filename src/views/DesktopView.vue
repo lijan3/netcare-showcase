@@ -24,11 +24,7 @@
           @cancel="EDRCancel"
           @finish="EDRComplete"
         />
-        <QAWizard
-          v-if="QAShow"
-          title="Quality Assurance"
-          @finish="QAShow = false"
-        />
+        <QAWizard v-if="QAShow" title="Quality Assurance" @finish="QACancel" />
         <!-- Care4You demos-->
         <Dialog
           v-if="showSenderJourney"
@@ -172,6 +168,10 @@ export default {
     EDRCancel: function () {
       this.EDRShow = false;
       this.closeWindow("EDR-setup");
+    },
+    QACancel: function () {
+      this.QAShow = false;
+      this.closeWindow("QA");
     },
     Care4YouComplete: function () {
       const vm = this;

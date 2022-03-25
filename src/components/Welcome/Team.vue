@@ -124,7 +124,7 @@ export default {
         },
         { key: "Moosa", image: "moosa.jpg", caption: "Account manager" },
         { key: "Dirk", image: "dirk.jpg", caption: "Development manager" },
-        { key: "Kevin", image: "kevin.jpg", caption: "Technical lead" },
+        { key: "Kevin", image: "kevin.jpg", caption: "Software engineer" },
         { key: "Mark", image: "mark.jpg", caption: "Software engineer" },
         {
           key: "Leandri",

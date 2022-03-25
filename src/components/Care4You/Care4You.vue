@@ -11,16 +11,20 @@
 import Wizard from "../Wizard.vue";
 // Steps
 import Care4YouSetup from "./Care4YouSetup.vue";
-import Care4YouProblem from "./Care4YouProblem.vue";
 import Care4YouStack from "./Care4YouStack.vue";
+import Care4YouSender from "./Care4YouSender.vue";
+import Care4YouAdmin from "./Care4YouAdmin.vue";
+import Care4YouReceiver from "./Care4YouReceiver.vue";
 import Care4YouConstraints from "./Care4YouConstraints.vue";
 import Care4YouDeployment from "./Care4YouDeployment.vue";
 import Care4YouFinish from "./Care4YouFinish.vue";
 
 import { shallowRef } from "vue";
 const Setup = shallowRef(Care4YouSetup);
-const Problem = shallowRef(Care4YouProblem);
 const Stack = shallowRef(Care4YouStack);
+const Sender = shallowRef(Care4YouSender);
+const Admin = shallowRef(Care4YouAdmin);
+const Receiver = shallowRef(Care4YouReceiver);
 const Constraints = shallowRef(Care4YouConstraints);
 const Deployment = shallowRef(Care4YouDeployment);
 const Finish = shallowRef(Care4YouFinish);
@@ -36,32 +40,22 @@ export default {
           content: Setup,
         },
         {
-          image: "care4you/care4you.jpg",
-          heading: "Problem Statement",
-          content: Problem,
-        },
-        {
-          image: "care4you/care4you.jpg",
-          heading: "Project Outcomes",
-          content: Problem,
-        },
-        {
-          image: "care4you/care4you.jpg",
+          image: "care4you/Sender.jpg",
           heading: "Project Outcomes",
           subheading: "Sender Journey",
-          content: Problem,
+          content: Sender,
         },
         {
-          image: "care4you/care4you.jpg",
+          image: "care4you/Admin2.jpg",
           heading: "Project Outcomes",
           subheading: "Admin Journey",
-          content: Problem,
+          content: Admin,
         },
         {
-          image: "care4you/care4you.jpg",
+          image: "care4you/Receiver.jpg",
           heading: "Project Outcomes",
           subheading: "Receiver Journey",
-          content: Problem,
+          content: Receiver,
         },
         {
           image: "care4you/care4you.jpg",

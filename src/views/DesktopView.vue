@@ -27,7 +27,6 @@
         <QAWizard
           v-if="QAShow"
           title="Quality Assurance"
-          @cancel="QACancel"
           @finish="QAShow = false"
         />
         <!-- Care4You demos-->
@@ -61,6 +60,7 @@ import TaskBar from "../components/TaskBar.vue";
 import WelcomeDialog from "../components/WelcomeDialog.vue";
 import Care4YouWizard from "../components/Care4You/Care4You.vue";
 import EDRWizard from "../components/EDR/EDR.vue";
+import QAWizard from "../components/QAWizard.vue";
 import Dialog from "../components/Dialog.vue";
 
 export default {
@@ -246,6 +246,7 @@ export default {
     WelcomeDialog,
     Care4YouWizard,
     EDRWizard,
+    QAWizard,
     Dialog,
   },
 };

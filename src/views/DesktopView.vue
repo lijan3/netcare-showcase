@@ -29,19 +29,19 @@
           v-if="showSenderJourney"
           title="Care4You Sender Journey"
           image="src/assets/img/care4you/SenderJourney.gif"
-          @close="showSenderJourney = false"
+          @close="closeSenderJourney"
         />
         <Dialog
           v-if="showAdminJourney"
           title="Care4You Admin Journey"
           image="src/assets/img/care4you/AdminJourney.gif"
-          @close="showAdminJourney = false"
+          @close="closeAdminJourney"
         />
         <Dialog
           v-if="showReceiverJourney"
           title="Care4You Reciever Journey"
           image="src/assets/img/care4you/ReceiverJourney.gif"
-          @close="showReceiverJourney = false"
+          @close="closeReceiverJourney"
         />
       </div>
     </div>
@@ -147,29 +147,56 @@ export default {
       vm.Care4YouShow = false;
       vm.closeWindow("Care4You-setup");
       vm.icons.push({
-        key: "Care4You",
+        key: "C4Y-Sender",
         img: "wm_file-5.png",
         label: "C4Y-Sender",
         onclick: () => {
           this.showSenderJourney = true;
+          this.windows.push({
+            key: "C4Y-Sender",
+            icon: "wm_file-5.png",
+            label: "Care4You Sender Journey",
+          });
         },
       });
       vm.icons.push({
-        key: "Care4You",
+        key: "C4Y-Admin",
         img: "wm_file-5.png",
         label: "C4Y-Admin",
         onclick: () => {
           this.showAdminJourney = true;
+          this.windows.push({
+            key: "C4Y-Admin",
+            icon: "wm_file-5.png",
+            label: "Care4You Admin Journey",
+          });
         },
       });
       vm.icons.push({
-        key: "Care4You",
+        key: "C4Y-Receiver",
         img: "wm_file-5.png",
         label: "C4Y-Receiver",
         onclick: () => {
           this.showReceiverJourney = true;
+          this.windows.push({
+            key: "C4Y-Receiver",
+            icon: "wm_file-5.png",
+            label: "Care4You Receiver Journey",
+          });
         },
       });
+    },
+    closeSenderJourney: function () {
+      this.showSenderJourney = false;
+      this.closeWindow("C4Y-Sender");
+    },
+    closeAdminJourney: function () {
+      this.showAdminJourney = false;
+      this.closeWindow("C4Y-Admin");
+    },
+    closeReceiverJourney: function () {
+      this.showReceiverJourney = false;
+      this.closeWindow("C4Y-Receiver");
     },
     EDRComplete: function () {
       this.EDRShow = false;

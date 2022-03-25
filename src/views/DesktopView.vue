@@ -21,8 +21,14 @@
         <EDRWizard
           v-if="EDRShow"
           title="EDR Setup"
-          @cancel="EDRShow = false"
+          @cancel="EDRCancel"
           @finish="EDRComplete"
+        />
+        <QAWizard
+          v-if="QAShow"
+          title="Quality Assurance"
+          @cancel="QACancel"
+          @finish="QAShow = false"
         />
         <!-- Care4You demos-->
         <Dialog
@@ -69,6 +75,7 @@ export default {
       showAdminJourney: false,
       showReceiverJourney: false,
       EDRShow: false,
+      QAShow: false,
       windows: [],
       icons: [
         {
@@ -106,7 +113,27 @@ export default {
           key: "EDRInstall",
           img: "executable-0.png",
           label: "EDR-setup.exe",
-          onclick: () => (vm.EDRShow = true),
+          onclick: () => {
+            vm.EDRShow = true;
+            vm.windows.push({
+              key: "EDR-setup",
+              icon: "executable-0.png",
+              label: "EDR-setup",
+            });
+          },
+        },
+        {
+          key: "QA",
+          img: "accessibility_window_objs.png",
+          label: "QA",
+          onclick: () => {
+            vm.QAShow = true;
+            vm.windows.push({
+              key: "QA",
+              icon: "accessibility_window_objs.png",
+              label: "Quality Assurance",
+            });
+          },
         },
       ],
     };
@@ -141,6 +168,10 @@ export default {
     Care4YouCancel: function () {
       this.Care4YouShow = false;
       this.closeWindow("Care4You-setup");
+    },
+    EDRCancel: function () {
+      this.EDRShow = false;
+      this.closeWindow("EDR-setup");
     },
     Care4YouComplete: function () {
       const vm = this;
@@ -200,6 +231,7 @@ export default {
     },
     EDRComplete: function () {
       this.EDRShow = false;
+      this.closeWindow("EDR-setup");
       this.icons.push({
         key: "EDR",
         img: "wm_file-5.png",

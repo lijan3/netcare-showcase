@@ -39,7 +39,7 @@
         @click="step = 3"
       >
         <span class="btn-text">
-          <span class="underline">K</span>evin Heritage
+          Kevin <span class="underline">H</span>eritage
         </span>
       </button>
       <button

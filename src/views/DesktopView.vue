@@ -24,6 +24,25 @@
           @cancel="EDRShow = false"
           @finish="EDRComplete"
         />
+        <!-- Care4You demos-->
+        <Dialog
+          v-if="showSenderJourney"
+          title="Care4You Sender Journey"
+          image="src/assets/img/care4you/SenderJourney.gif"
+          @close="showSenderJourney = false"
+        />
+        <Dialog
+          v-if="showAdminJourney"
+          title="Care4You Admin Journey"
+          image="src/assets/img/care4you/AdminJourney.gif"
+          @close="showAdminJourney = false"
+        />
+        <Dialog
+          v-if="showReceiverJourney"
+          title="Care4You Reciever Journey"
+          image="src/assets/img/care4you/ReceiverJourney.gif"
+          @close="showReceiverJourney = false"
+        />
       </div>
     </div>
     <task-bar :windows="windows" @showWelcome="showWelcomeDialog"></task-bar>
@@ -36,6 +55,7 @@ import TaskBar from "../components/TaskBar.vue";
 import WelcomeDialog from "../components/WelcomeDialog.vue";
 import Care4YouWizard from "../components/Care4You/Care4You.vue";
 import EDRWizard from "../components/EDR/EDR.vue";
+import Dialog from "../components/Dialog.vue";
 
 export default {
   name: "DesktopView",
@@ -45,6 +65,9 @@ export default {
       showWelcome: false,
       showKnowledgeShare: false,
       Care4YouShow: false,
+      showSenderJourney: false,
+      showAdminJourney: false,
+      showReceiverJourney: false,
       EDRShow: false,
       windows: [],
       icons: [
@@ -125,9 +148,27 @@ export default {
       vm.closeWindow("Care4You-setup");
       vm.icons.push({
         key: "Care4You",
-        img: "directory_closed-4.png",
-        label: "Care4You",
-        onclick: () => {},
+        img: "wm_file-5.png",
+        label: "C4Y-Sender",
+        onclick: () => {
+          this.showSenderJourney = true;
+        },
+      });
+      vm.icons.push({
+        key: "Care4You",
+        img: "wm_file-5.png",
+        label: "C4Y-Admin",
+        onclick: () => {
+          this.showAdminJourney = true;
+        },
+      });
+      vm.icons.push({
+        key: "Care4You",
+        img: "wm_file-5.png",
+        label: "C4Y-Receiver",
+        onclick: () => {
+          this.showReceiverJourney = true;
+        },
       });
     },
     EDRComplete: function () {
@@ -146,6 +187,7 @@ export default {
     WelcomeDialog,
     Care4YouWizard,
     EDRWizard,
+    Dialog,
   },
 };
 </script>

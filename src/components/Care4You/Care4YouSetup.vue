@@ -6,9 +6,21 @@
   <p class="card-text">The next four parts of Setup are:</p>
   <ol>
     <li>Problem</li>
-    <li>Outcomes</li>
-    <li>Constraints</li>
-    <li>Processes</li>
+    <li>
+      Outcomes
+      <ul>
+        <li>Sender Journey</li>
+        <li>Admin Journey</li>
+        <li>Receiver Journey</li>
+      </ul>
+    </li>
+    <li>
+      Constraints
+      <ul>
+        <li>Stack</li>
+        <li>Deployments</li>
+      </ul>
+    </li>
   </ol>
 </template>
 

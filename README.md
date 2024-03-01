@@ -1,4 +1,7 @@
 # Entelect Project Showcase: Netcare
+Project Showcase for Netcare Gratitude Platform and Electronic Drug Register  
+Built in Vue
+
 ## Project Setup
 
 ```sh
